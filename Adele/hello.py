@@ -1,0 +1,1 @@
+print("Adele sings Hello!")
