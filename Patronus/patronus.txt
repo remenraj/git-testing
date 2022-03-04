@@ -1,4 +1,4 @@
-HARRY'S PATRONUS
+HARRY'S PATRONUS IS A STAG
 
    /|       |\
 `__\\       //__'
@@ -24,6 +24,3 @@ HARRY'S PATRONUS
            | || |           | |   | |
            |_||_|           |_|   |_|
           /_//_/           /_/   /_/
-
-
-Harry's Patronus is a stag.
