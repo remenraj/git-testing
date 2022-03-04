@@ -24,3 +24,6 @@ HARRY'S PATRONUS: STAG
            | || |           | |   | |
            |_||_|           |_|   |_|
           /_//_/           /_/   /_/
+
+
+Harry's Patronus is a stag.
