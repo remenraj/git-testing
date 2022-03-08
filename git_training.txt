@@ -179,6 +179,17 @@ Merging branches:
         Remove the conflict "markers" in the document.
         Add the file(s) to the staging area: git add .
         Commit the changes: git commit -m "Commit message"
+        Usually the commit message will be the same as the one you used for the merge. Or "Resolve conflicts".
+
+
+    Resolving conflicts in vs code:
+        It can be done by opening the file in vs code and choosing the "merge conflicts" option.
+        Then, you can choose which branch's contents you want to keep.
+        Or keep the contents of both branches.
+        Add the file(s) to the staging area: git add .
+        Commit the changes: git commit -m "Commit message"
+        Usually the commit message will be the same as the one you used for the merge. Or "Resolve conflicts".
+
 
 
 
