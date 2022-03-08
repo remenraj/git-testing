@@ -3,4 +3,7 @@ English: Welcome
 Spanish: Bienvenido
 
 Hindi: स्वागत है
+
 German: Willkommen
+
+Tamil: வருகையானது
