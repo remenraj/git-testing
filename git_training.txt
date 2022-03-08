@@ -1,0 +1,186 @@
+Terminal:
+    show current directory: pwd
+
+    List files and folders: ls
+    List files and folders in a directory: ls [directory]
+    List all files and folders, including hidden files and folders: ls -a
+    List files and folders in a directory, including hidden files and folders: ls [directory] -a
+    List all files and folders, including hidden files and folders, including the size of each file: ls -al
+    List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file: ls -alh
+    List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file, including the group of each file: ls -alhG
+    List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file, including the group of each file, including the last modified time of each file: ls -alhGt
+    List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file, including the group of each file, including the last modified time of each file, including the last accessed time of each file: ls -alhGtA
+    List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file, including the group of each file, including the last modified time of each file, including the last accessed time of each file, including the creation time of each file: ls -alhGtAC
+
+    Open a file: open [file]
+    Open a file in a directory: open [directory] [file]
+    Open a file in a directory, with a specified line number: open [directory] [file] [line number]
+    Open a folder: open [folder]
+    Open a folder in a directory: open [directory] [folder]
+    Open a folder in a directory, with a specified line number: open [directory] [folder] [line number]
+
+    Open current directory: cd
+    Open a directory: cd [directory]
+    Open a directory, with a specified line number: cd [directory] [line number]
+
+    list all directories: dir
+    list all directories in a directory: dir [directory]
+    list all directories in a directory, with a specified line number: dir [directory] [line number]
+
+    list all files: file
+    list all files in a directory: file [directory]
+    list all files in a directory, with a specified line number: file [directory] [line number]
+
+    list files and folders in a directory: dir [directory]
+    list files and folders in a directory, with a specified line number: dir [directory] [line number]
+
+    list all files and folders, including hidden files and folders: dir -a
+    list all files and folders, including hidden files and folders, with a specified line number: dir -a [line number]
+
+    change directory: cd [directory]
+    change directory, with a specified line number: cd [directory] [line number]
+
+    change directory to the parent directory: cd ..
+    change directory to the parent directory, with a specified line number: cd .. [line number]
+
+    change directory to the root directory: cd /
+    change directory to the root directory, with a specified line number: cd / [line number]
+
+    change directory to the home directory: cd ~
+    change directory to the home directory, with a specified line number: cd ~ [line number]
+
+    change directory to the home directory of the current user: cd ~user
+    change directory to the home directory of the current user, with a specified line number: cd ~user [line number]
+
+    change directory to the home directory of the specified user: cd ~user
+    change directory to the home directory of the specified user, with a specified line number: cd ~user [line number]
+
+    create a directory: mkdir [directory]
+    create a directory, with a specified line number: mkdir [directory] [line number]
+
+    create a file: touch [file]
+    create a file, with a specified line number: touch [file] [line number]
+    create a file with a specified size: touch [file] [size]
+    create a file with a specified size, with a specified line number: touch [file] [size] [line number]
+    create a file with a specified size and a specified owner: touch [file] [size] [owner]
+    create a file with a specified size and a specified owner, with a specified line number: touch [file] [size] [owner] [line number]
+    create a file with a specified size and a specified owner and a specified group: touch [file] [size] [owner] [group]
+    create a file with a specified size and a specified owner and a specified group, with a specified line number: touch [file] [size] [owner] [group] [line number]
+
+    Delete a file: rm [file]
+    Delete a file, with a specified line number: rm [file] [line number]
+
+    Delete a directory: rmdir [directory]
+    Delete a directory, with a specified line number: rmdir [directory] [line number]
+
+    Delete a folder: rm -rf [folder]
+    Delete a folder, with a specified line number: rm -rf [folder] [line number]
+
+    Delete a file or a directory: rm -rf [file or directory]
+    Delete a file or a directory, with a specified line number: rm -rf [file or directory] [line number]
+
+    Delete a file or a directory, with confirmation: rm -rf [file or directory]
+    Delete a file or a directory, with confirmation, with a specified line number: rm -rf [file or directory] [line number]
+
+
+
+Configuring git: 
+
+    Show the username: git config user.name
+    Show the email: git config user.email
+
+    username: git config --global user.email "email"
+    email: git config --global user.name "full name/username"
+
+
+Initialize git: git init
+
+Status: git status
+
+
+Log: git log
+    Log with file name: git log --name-only
+    Log with line number: git log --numstat
+    Log in short format: git log --pretty=oneline
+    Log in short format with file name: git log --pretty=oneline --name-only
+    Log with file name and line number: git log --name-only --oneline
+    Log with file name and line number and commit message: git log --name-only --oneline --pretty=format:"%h %s"
+    Log with file name and line number and commit message and author: git log --name-only --oneline --pretty=format:"%h %s %an"
+    Log with file name and line number and commit message and author and date: git log --name-only --oneline --pretty=format:"%h %s %an %ad"
+    Log with file name and line number and commit message and author and date and time: git log --name-only --oneline --pretty=format:"%h %s %an %ad %at"
+    Log with file name and line number and commit message and author and date and time and email: git log --name-only --oneline --pretty=format:"%h %s %an %ad %at %ae"
+    Log with file name and line number and commit message and author and date and time and email and committer: git log --name-only --oneline --pretty=format:"%h %s %an %ad %at %ae %cn"
+    Log with file name and line number and commit message and author and date and time and email and committer and committer date: git log --name-only --oneline --pretty=format:"%h %s %an %ad %at %ae %cn %cd"
+    Log with file name and line number and commit message and author and date and time and email and committer and committer date and committer time: git log --name-only --oneline --pretty=format:"%h %s %an %ad %at %ae %cn %cd %ct"
+    Log with file name and line number and commit message and author and date and time and email and committer and committer date and committer time and committer email: git log --name-only --oneline --pretty=format:"%h %s %an %ad %at %ae %cn %cd %ct %ce"
+    Log with file name and line number and commit message and author and date and time and email and committer and committer date and committer time and committer email and committer name: git log --name-only --oneline --pretty=format:"%h %s %an %ad %at %ae %cn %cd %ct %ce %cn"
+
+
+Add gitignore in the root of a repository: git add .gitignore
+
+    Inside the file, add the following:
+    .DS_Store # for files
+    foldername/ # for folders
+    *.log # will ignore all files with the .log extension
+    Use gitignore.io for templates: python, windows, mac, linux, vscode, etc https://www.gitignore.io/
+
+
+Stage and Commit:
+    Stage all files: git add .
+
+    Stage a file: git add file.txt file2.txt
+
+    Commit: git commit -m "Commit message"
+
+    Stage and commit in one step:
+        git commit -am "Commit message"
+        git commit -a -m "Commit message"
+
+    Amend the last commit(Stage/add the changes and do this): git commit --amend -m "Commit message"
+
+
+Branches:
+
+    List all branches: git branch
+
+    Create branch: git branch branch_name
+
+    Switch to branch:
+        git checkout branch_name
+        git switch branch_name
+
+    When switching to a branch, if the branch does not exist, git will create it.
+    Unstaged changes will be lost when using checkout.
+    Unstaged changes will come with the new branch, when using switch if there is no conflict.
+
+    Create branch and switch to it:
+        git checkout -b branch_name
+        git switch -c branch_name
+
+    Rename branch(have to be in that branch): git branch -m new_branch_name
+
+    Rename any branch: git branch -m branch_name new_branch_name
+
+    Delete a merged branch: git branch -d branch_name
+
+    Delete a local branch: git branch -D branch_name
+
+
+Merging branches:
+
+    Fast forward merge: 
+        First switch to the branch you want to merge: git switch branch_name
+        Then merge: git merge branch_name
+    
+    Resolving conflicts:
+        Open up the file(s) with merge conflicts.
+        Edit the file(s) to remove the conflicts. Decide which branch's contents you want to keep.
+        Or keep the contents of both branches.
+        Remove the conflict "markers" in the document.
+        Add the file(s) to the staging area: git add .
+        Commit the changes: git commit -m "Commit message"
+
+
+
+
+
