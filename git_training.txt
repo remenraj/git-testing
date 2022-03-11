@@ -191,7 +191,25 @@ Merging branches:
         Usually the commit message will be the same as the one you used for the merge. Or "Resolve conflicts".
 
 
-
+Comparing changes with git diff:
+    
+        Show the changes between two commits: git diff [commit] [commit]
+    
+        Show the changes between two commits, with a specified file name: git diff [commit] [commit] [file name]
+    
+        Show the changes between two commits, with a specified file name and line number: git diff [commit] [commit] [file name] [line number]
+    
+        Show the changes between two commits, with a specified file name and line number, with a specified number of lines: git diff [commit] [commit] [file name] [line number] [number of lines]
+    
+        Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters: git diff [commit] [commit] [file name] [line number] [number of lines] [number of characters]
+    
+        Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters, with a specified number of words: git diff [commit] [commit] [file name] [line number] [number of lines] [number of characters] [number of words]
+    
+        Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters, with a specified number of words, with a specified number of bytes: git diff [commit] [commit] [file name] [line number] [number of lines] [number of characters] [number of words] [number of bytes]
+    
+        Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters, with a specified number of words, with a specified number of bytes, with a specified number of lines of context: git diff [commit] [commit] [file name] [line number] [number of lines] [number of characters] [number of words] [number of bytes] [number of lines of context]
+    
+        Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters, with a specified number of words, with a specified number of bytes, with a specified number of lines of context, with a specified number of characters of context: git diff [commit
 
 
 
