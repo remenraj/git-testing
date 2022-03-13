@@ -192,6 +192,12 @@ Merging branches:
 
 
 Comparing changes with git diff:
+
+    Compare staging area and working directory(Compares unstaged changes and last commit): git diff
+
+    Compare changes in working directory since your last commit (includes staged and unstaged changes): git diff HEAD
+
+    Compare two commits:
     
         Show the changes between two commits: git diff [commit] [commit]
     
