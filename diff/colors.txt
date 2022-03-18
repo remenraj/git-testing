@@ -4,3 +4,4 @@ yellow
 black
 green
 purple
+violet
