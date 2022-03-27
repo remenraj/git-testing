@@ -13,6 +13,7 @@ Terminal:
     List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file, including the group of each file, including the last modified time of each file, including the last accessed time of each file, including the creation time of each file: ls -alhGtAC
 
     Open a file: open [file]
+    Open files in VS Code inside a folder: code .
     Open a file in a directory: open [directory] [file]
     Open a file in a directory, with a specified line number: open [directory] [file] [line number]
     Open a folder: open [folder]
@@ -197,9 +198,82 @@ Comparing changes with git diff:
 
     Compare changes in working directory since your last commit (includes staged and unstaged changes): git diff HEAD
 
-    Compare two commits:
+    Compare changes within a file (compares unstaged and last commit): git diff file.txt
+
+    Compare changes within a file since your last commit(shows changes in staged and working tree): git diff HEAD file.txt
+
+    Compare changes between last commit and staging area (shows only staged changes):
+        git diff --staged file.txt
+        git diff --cached file.txt
+
     
+    Compare changes within a file between two commits: git diff commit_id1 commit_id2 file.txt
+
+
+    Compare changes in staging area since your last commit, excluding untracked files: 
+    
+        git diff --staged
+        git diff --cached
+
+        Compare changes in working directory since your last commit, excluding untracked files and ignored files: git diff --cached --ignore-submodules
+
+        Compare changes in working directory since your last commit, excluding untracked files and ignored files, and show the output in a pager: git diff --cached --ignore-submodules --stat
+
+        Compare changes in working directory since your last commit, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager: git diff --cached --ignore-submodules --stat --patch-with-stat
+
+        Compare changes in working directory since your last commit, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager, and show the diff in a pager with color: git diff --cached --ignore-submodules --stat --patch-with-stat --color-words
+
+        Compare changes in working directory since your last commit, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager, and show the diff in a pager with color, and show the diff in a pager with color and word diff: git diff --cached --ignore-submodules --stat --patch-with-stat --color-words --word-diff
+
+
+    Comparing branches (compares changes from branch_name1 to branch_name2):
+        git diff branch_name1 branch_name2
+        git diff branch_name1..branch_name2
+
+        git diff --staged branch_name1 branch_name2
+
+        git diff --cached branch_name1 branch_name2
+
+        git diff --cached --ignore-submodules branch_name1 branch_name2
+
+        git diff --cached --ignore-submodules --stat branch_name1 branch_name2
+
+        git diff --cached --ignore-submodules --stat --patch-with-stat branch_name1 branch_name2
+
+        git diff --cached --ignore-submodules --stat --patch-with-stat --color-words branch_name1 branch_name2
+
+        git diff --cached --ignore-submodules --stat --patch-with-stat --color-words --word-diff branch_name1 branch_name2
+
+    Compare two commits :
+
+        [commit] is the commit hash
+        Previous commit can be accessed with HEAD^, HEAD^^, HEAD^^^, etc.
+        Also:
+        HEAD~1 is the previous commit
+        HEAD~2 is the previous commit of the previous commit
+
+
         Show the changes between two commits: git diff [commit] [commit]
+
+        Compare parent commit with current commit: git diff [commit]^ [commit]
+
+        Compare parent commit with current commit and show the output in a pager: git diff [commit]^ [commit] --stat
+
+
+        Show the changes between two commits, excluding untracked files: git diff [commit] [commit] --cached
+
+        Show the changes between two commits, excluding untracked files and ignored files: git diff [commit] [commit] --cached --ignore-submodules
+
+        Show the changes between two commits, excluding untracked files and ignored files, and show the output in a pager: git diff [commit] [commit] --cached --ignore-submodules --stat
+
+        Show the changes between two commits, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager: git diff [commit] [commit] --cached --ignore-submodules --stat --patch-with-stat
+
+        Show the changes between two commits, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager, and show the diff in a pager with color: git diff [commit] [commit] --cached --ignore-submodules --stat --patch-with-stat --color-words
+
+        Show the changes between two commits, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager, and show the diff in a pager with color, and show the diff in a pager with color and word diff: git diff [commit] [commit] --cached --ignore-submodules --stat --patch-with-stat --color-words --word-diff
+
+
+
     
         Show the changes between two commits, with a specified file name: git diff [commit] [commit] [file name]
     
