@@ -131,6 +131,9 @@ Stage and Commit:
 
     Stage a file: git add file.txt file2.txt
 
+    Undo a stage: git reset HEAD file.txt
+    
+
     Commit: git commit -m "Commit message"
 
     Stage and commit in one step:
@@ -291,5 +294,101 @@ Comparing changes with git diff:
     
         Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters, with a specified number of words, with a specified number of bytes, with a specified number of lines of context, with a specified number of characters of context: git diff [commit
 
+
+Stashing:
+    Stash changes:
+        git stash
+        git stash save
+            
+        Stash changes and keep working directory clean: 
+            git stash --keep-index
+            git stash --keep-index save
+
+        Stash changes with a message: 
+            git stash -m "Stash message"
+            git stash -m "Stash message" save
+        
+        git stash save "Stash message"
+        git stash save --keep-index
+        git stash save --keep-index "Stash message"
+
+    Show the stashed changes:
+        git stash list
+        git stash show
+
+        Show the stashed changes in a pager: git stash show --patch
+
+        Show the stashed changes in a pager with color: git stash show --patch --color-words
+
+        Show the stashed changes in a pager with color and word diff: git stash show --patch --color-words --word-diff
+
+        Show the stashed changes in a pager with stat: git stash show --patch --stat
+
+    Apply the stashed changes:
+        (Leaves it in the stash list for possible later reuse (or you can then 'git stash drop' it))
+        git stash apply
+        
+        Apply a specific stash:
+            git stash apply stash@{0}
+            git stash apply stash@{1}
+            git stash apply stash@{2}
+            git stash apply stash@{3}
+
+        Apply the stashed changes and keep working directory clean: git stash apply --keep-index
+
+        Apply the stashed changes and keep working directory clean, with a specified index file: git stash apply --keep-index --index-file=.git/stash
+
+    Apply the stashed changes, and remove the stashed changes:
+        (Throws away the (topmost, by default) stash after applying it)
+        git stash pop
+
+        Apply a specific stash, and remove the stashed changes:
+            git stash pop [stash id]
+            git stash pop stash@{0}
+            git stash pop stash@{1}
+            git stash pop stash@{2}
+            git stash pop stash@{3}
+
+    Remove/delete the stashed changes:
+        git stash drop
+
+        Remove/delete a specific stash:
+            git stash drop [stash id]
+            git stash drop stash@{0}
+            git stash drop stash@{1}
+            git stash drop stash@{2}
+            git stash drop stash@{3}
+
+
+Undo changes:
+
+    Undo unstaged local changes:
+        Confirm that the file is unstaged: 
+            git status
+            git diff --cached
+            git diff HEAD
+
+        To overwrite local changes: git checkout -- [file name] 
+        
+        To save local changes so that they can be restored later: 
+            git stash
+            git stash save
+        
+        To discard local changes to all files permanently: git reset --hard
+
+    Undo staged changes:
+        Confirm that the file is staged: 
+            git status
+            git diff
+
+        To unstage the file but keep your changes: git restore --staged [file name]
+
+        To unstage everything but keep your changes: git reset
+
+        To unstage the file to current commit HEAD: git reset HEAD [file name]
+
+        To discard all local changes but save them for later: git stash
+
+        To discard everything permanently: git reset --hard
 
 
