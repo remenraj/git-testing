@@ -360,7 +360,39 @@ Stashing:
             git stash drop stash@{3}
 
 
-Undo changes:
+Check/Undoing changes:
+
+    Checkout a commit:
+        git checkout [commit]
+        
+        Checkout a commit, with a specified file name: git checkout [commit] [file name]
+        
+        Checkout a commit, with a specified file name and line number: git checkout [commit] [file name] [line number]
+
+        Checkout a commit, with a specified file name and line number, with a specified number of lines: git checkout [commit] [file name] [line number] [number of lines]
+
+        Checkout a commit, with a specified file name and line number, with a specified number of lines, with a specified number of characters: git checkout [commit] [file name] [line number] [number of lines] [number of characters]
+
+    Switch back from detached HEAD state to master/branch:
+        git switch master
+        git switch master -- [file name]
+        git switch master -- [file name] [line number]
+        git switch master -- [file name] [line number] [number of lines]
+        git switch master -- [file name] [line number] [number of lines] [number of characters]
+
+        git switch [branch_name]
+
+        Go back to the head of the branch you're on:
+            git switch -
+
+    Checkout previous commits:
+        (HEAD~1 points to the last commit before where HEAD points at)
+        git checkout HEAD~1
+        git checkout HEAD~2
+        git checkout HEAD~3
+
+
+
 
     Undo unstaged local changes:
         Confirm that the file is unstaged: 
@@ -368,13 +400,48 @@ Undo changes:
             git diff --cached
             git diff HEAD
 
-        To overwrite local changes: git checkout -- [file name] 
+        To overwrite local changes after the last commit:: 
+            git checkout -- [file name] 
+            git checkout HEAD [file name]
+
+        Restores using HEAD as the default source: git restore [file name]
+        Restores using HEAD~1 as the default source: 
+            git restore --source HEAD~1 [file name]
+            (This will restores the contents of the file to the state of HEAD~1)
+
+            git restore --source [commit hash] [file name]
+
         
         To save local changes so that they can be restored later: 
             git stash
             git stash save
         
-        To discard local changes to all files permanently: git reset --hard
+        To discard local changes to all files permanently after last commit: git reset --hard
+
+        To discard local changes to a specific file permanently after last commit: git reset --hard [file name]
+
+        Undo changes after particular commit:
+        
+            Removes all the commits and discard all changes after the specified commit:
+                git reset --hard [commit]
+
+            Removes all the commits after the specified commit, changes are shown as modified in the working directory:
+                git reset [commit]
+
+            Go back to a previous commit(Changes since that commit changes are shown as modified in the working directory):
+                git reset [commit]
+                
+                Go back to a previous commit, with a specified file name: git reset [commit] [file name]
+                
+                Go back to a previous commit, with a specified file name and line number: git reset [commit] [file name] [line number]
+
+                Go back to a previous commit, with a specified file name and line number, with a specified number of lines: git reset [commit] [file name] [line number] [number of lines]
+
+                Go back to a previous commit, with a specified file name and line number, with a specified number of lines, with a specified number of characters: git reset [commit] [file name] [line number] [number of lines] [number of characters]    
+
+            Using revert, revert creates a new commit with the changes from the specified commit, and the new commit is made the new HEAD:
+                git revert [commit]
+
 
     Undo staged changes:
         Confirm that the file is staged: 
