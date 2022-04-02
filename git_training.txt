@@ -6,82 +6,56 @@ Terminal:
     List all files and folders, including hidden files and folders: ls -a
     List files and folders in a directory, including hidden files and folders: ls [directory] -a
     List all files and folders, including hidden files and folders, including the size of each file: ls -al
-    List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file: ls -alh
-    List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file, including the group of each file: ls -alhG
-    List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file, including the group of each file, including the last modified time of each file: ls -alhGt
-    List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file, including the group of each file, including the last modified time of each file, including the last accessed time of each file: ls -alhGtA
     List all files and folders, including hidden files and folders, including the size of each file, including the owner of each file, including the group of each file, including the last modified time of each file, including the last accessed time of each file, including the creation time of each file: ls -alhGtAC
 
     Open a file: open [file]
     Open files in VS Code inside a folder: code .
     Open a file in a directory: open [directory] [file]
-    Open a file in a directory, with a specified line number: open [directory] [file] [line number]
     Open a folder: open [folder]
     Open a folder in a directory: open [directory] [folder]
-    Open a folder in a directory, with a specified line number: open [directory] [folder] [line number]
 
     Open current directory: cd
     Open a directory: cd [directory]
-    Open a directory, with a specified line number: cd [directory] [line number]
 
     list all directories: dir
     list all directories in a directory: dir [directory]
-    list all directories in a directory, with a specified line number: dir [directory] [line number]
 
     list all files: file
     list all files in a directory: file [directory]
-    list all files in a directory, with a specified line number: file [directory] [line number]
 
     list files and folders in a directory: dir [directory]
-    list files and folders in a directory, with a specified line number: dir [directory] [line number]
 
     list all files and folders, including hidden files and folders: dir -a
-    list all files and folders, including hidden files and folders, with a specified line number: dir -a [line number]
 
     change directory: cd [directory]
-    change directory, with a specified line number: cd [directory] [line number]
 
     change directory to the parent directory: cd ..
-    change directory to the parent directory, with a specified line number: cd .. [line number]
 
     change directory to the root directory: cd /
-    change directory to the root directory, with a specified line number: cd / [line number]
 
     change directory to the home directory: cd ~
-    change directory to the home directory, with a specified line number: cd ~ [line number]
 
     change directory to the home directory of the current user: cd ~user
-    change directory to the home directory of the current user, with a specified line number: cd ~user [line number]
 
     change directory to the home directory of the specified user: cd ~user
-    change directory to the home directory of the specified user, with a specified line number: cd ~user [line number]
 
     create a directory: mkdir [directory]
     create a directory, with a specified line number: mkdir [directory] [line number]
 
     create a file: touch [file]
-    create a file, with a specified line number: touch [file] [line number]
     create a file with a specified size: touch [file] [size]
-    create a file with a specified size, with a specified line number: touch [file] [size] [line number]
     create a file with a specified size and a specified owner: touch [file] [size] [owner]
-    create a file with a specified size and a specified owner, with a specified line number: touch [file] [size] [owner] [line number]
     create a file with a specified size and a specified owner and a specified group: touch [file] [size] [owner] [group]
-    create a file with a specified size and a specified owner and a specified group, with a specified line number: touch [file] [size] [owner] [group] [line number]
 
     Delete a file: rm [file]
-    Delete a file, with a specified line number: rm [file] [line number]
 
     Delete a directory: rmdir [directory]
-    Delete a directory, with a specified line number: rmdir [directory] [line number]
 
     Delete a folder: rm -rf [folder]
-    Delete a folder, with a specified line number: rm -rf [folder] [line number]
 
     Delete a file or a directory: rm -rf [file or directory]
-    Delete a file or a directory, with a specified line number: rm -rf [file or directory] [line number]
 
     Delete a file or a directory, with confirmation: rm -rf [file or directory]
-    Delete a file or a directory, with confirmation, with a specified line number: rm -rf [file or directory] [line number]
 
 
 
@@ -220,12 +194,6 @@ Comparing changes with git diff:
 
         Compare changes in working directory since your last commit, excluding untracked files and ignored files: git diff --cached --ignore-submodules
 
-        Compare changes in working directory since your last commit, excluding untracked files and ignored files, and show the output in a pager: git diff --cached --ignore-submodules --stat
-
-        Compare changes in working directory since your last commit, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager: git diff --cached --ignore-submodules --stat --patch-with-stat
-
-        Compare changes in working directory since your last commit, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager, and show the diff in a pager with color: git diff --cached --ignore-submodules --stat --patch-with-stat --color-words
-
         Compare changes in working directory since your last commit, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager, and show the diff in a pager with color, and show the diff in a pager with color and word diff: git diff --cached --ignore-submodules --stat --patch-with-stat --color-words --word-diff
 
 
@@ -233,19 +201,6 @@ Comparing changes with git diff:
         git diff branch_name1 branch_name2
         git diff branch_name1..branch_name2
 
-        git diff --staged branch_name1 branch_name2
-
-        git diff --cached branch_name1 branch_name2
-
-        git diff --cached --ignore-submodules branch_name1 branch_name2
-
-        git diff --cached --ignore-submodules --stat branch_name1 branch_name2
-
-        git diff --cached --ignore-submodules --stat --patch-with-stat branch_name1 branch_name2
-
-        git diff --cached --ignore-submodules --stat --patch-with-stat --color-words branch_name1 branch_name2
-
-        git diff --cached --ignore-submodules --stat --patch-with-stat --color-words --word-diff branch_name1 branch_name2
 
     Compare two commits :
 
@@ -265,32 +220,12 @@ Comparing changes with git diff:
 
         Show the changes between two commits, excluding untracked files: git diff [commit] [commit] --cached
 
-        Show the changes between two commits, excluding untracked files and ignored files: git diff [commit] [commit] --cached --ignore-submodules
-
-        Show the changes between two commits, excluding untracked files and ignored files, and show the output in a pager: git diff [commit] [commit] --cached --ignore-submodules --stat
-
-        Show the changes between two commits, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager: git diff [commit] [commit] --cached --ignore-submodules --stat --patch-with-stat
-
-        Show the changes between two commits, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager, and show the diff in a pager with color: git diff [commit] [commit] --cached --ignore-submodules --stat --patch-with-stat --color-words
-
         Show the changes between two commits, excluding untracked files and ignored files, and show the output in a pager, and show the diff in a pager, and show the diff in a pager with color, and show the diff in a pager with color and word diff: git diff [commit] [commit] --cached --ignore-submodules --stat --patch-with-stat --color-words --word-diff
 
 
 
     
         Show the changes between two commits, with a specified file name: git diff [commit] [commit] [file name]
-    
-        Show the changes between two commits, with a specified file name and line number: git diff [commit] [commit] [file name] [line number]
-    
-        Show the changes between two commits, with a specified file name and line number, with a specified number of lines: git diff [commit] [commit] [file name] [line number] [number of lines]
-    
-        Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters: git diff [commit] [commit] [file name] [line number] [number of lines] [number of characters]
-    
-        Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters, with a specified number of words: git diff [commit] [commit] [file name] [line number] [number of lines] [number of characters] [number of words]
-    
-        Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters, with a specified number of words, with a specified number of bytes: git diff [commit] [commit] [file name] [line number] [number of lines] [number of characters] [number of words] [number of bytes]
-    
-        Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters, with a specified number of words, with a specified number of bytes, with a specified number of lines of context: git diff [commit] [commit] [file name] [line number] [number of lines] [number of characters] [number of words] [number of bytes] [number of lines of context]
     
         Show the changes between two commits, with a specified file name and line number, with a specified number of lines, with a specified number of characters, with a specified number of words, with a specified number of bytes, with a specified number of lines of context, with a specified number of characters of context: git diff [commit
 
@@ -331,8 +266,6 @@ Stashing:
         Apply a specific stash:
             git stash apply stash@{0}
             git stash apply stash@{1}
-            git stash apply stash@{2}
-            git stash apply stash@{3}
 
         Apply the stashed changes and keep working directory clean: git stash apply --keep-index
 
@@ -346,8 +279,6 @@ Stashing:
             git stash pop [stash id]
             git stash pop stash@{0}
             git stash pop stash@{1}
-            git stash pop stash@{2}
-            git stash pop stash@{3}
 
     Remove/delete the stashed changes:
         git stash drop
@@ -356,8 +287,6 @@ Stashing:
             git stash drop [stash id]
             git stash drop stash@{0}
             git stash drop stash@{1}
-            git stash drop stash@{2}
-            git stash drop stash@{3}
 
 
 Check/Undoing changes:
@@ -367,18 +296,11 @@ Check/Undoing changes:
         
         Checkout a commit, with a specified file name: git checkout [commit] [file name]
         
-        Checkout a commit, with a specified file name and line number: git checkout [commit] [file name] [line number]
-
-        Checkout a commit, with a specified file name and line number, with a specified number of lines: git checkout [commit] [file name] [line number] [number of lines]
-
         Checkout a commit, with a specified file name and line number, with a specified number of lines, with a specified number of characters: git checkout [commit] [file name] [line number] [number of lines] [number of characters]
 
     Switch back from detached HEAD state to master/branch:
         git switch master
         git switch master -- [file name]
-        git switch master -- [file name] [line number]
-        git switch master -- [file name] [line number] [number of lines]
-        git switch master -- [file name] [line number] [number of lines] [number of characters]
 
         git switch [branch_name]
 
@@ -433,10 +355,6 @@ Check/Undoing changes:
                 
                 Go back to a previous commit, with a specified file name: git reset [commit] [file name]
                 
-                Go back to a previous commit, with a specified file name and line number: git reset [commit] [file name] [line number]
-
-                Go back to a previous commit, with a specified file name and line number, with a specified number of lines: git reset [commit] [file name] [line number] [number of lines]
-
                 Go back to a previous commit, with a specified file name and line number, with a specified number of lines, with a specified number of characters: git reset [commit] [file name] [line number] [number of lines] [number of characters]    
 
             Using revert, revert creates a new commit with the changes from the specified commit, and the new commit is made the new HEAD:
@@ -459,3 +377,69 @@ Check/Undoing changes:
         To discard everything permanently: git reset --hard
 
 
+Cloning: 
+    git clone [repository]
+    git clone [repository URL] [directory name]
+
+
+Setting up SSH Keys:
+    Open terminal(bash)
+    Enter the following command to see if existing SSH keys are set up:
+        ls -al ~/.ssh
+
+    If not Generate a new key by following the instructions from this link:
+        https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+
+Connect local repo to remote repo:
+    * Create a new repo on Github.
+    * Connect your local repo (add a remote)
+    * Push up your changes to Github
+
+
+    View existing remotes for your repository:
+        gir remote
+        git remote -v
+        (-v verbose, shows the URL of the remote)
+
+    Add a remote: git remote add [name] [remote URL]
+        git remote add origin [remote URL]
+    
+    Rename a remote: git remote rename [old name] [new name]
+        git remote rename origin origin_new
+    
+    Remove a remote: git remote remove [name]
+        git remote remove origin
+
+    Rename master branch to main:
+        git branch -M main
+        (-M: shortcut for --move --force)
+
+        git branch -m master master_new
+        (-m: shortcut for --move)
+    
+    Push up your changes to Github: git push <remote> <branch>
+        git push origin main
+        git push origin master --force
+        (-f: force push)
+
+    Push a branch up to Github: git push <remote> <branch>
+        git push origin main
+        git push origin master --force
+        (-f: force push)p-  1
+
+        git push -u origin master
+        (-u: update remote)
+
+        Push only th specified file: git push -u origin master -- [file name]
+        (-u: update remote)
+
+        git push origin master --force: 
+            (-f: force push)
+
+        git push origin master --tags: 
+            (-t: push tags)
+
+
+        git push origin master --delete: 
+            (-d: delete remote branch)
