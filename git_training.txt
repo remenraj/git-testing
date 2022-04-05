@@ -121,19 +121,25 @@ Branches:
 
     List all branches: git branch
 
+    List remote branches: git branch -r
+
     Create branch: git branch branch_name
 
     Switch to branch:
-        git checkout branch_name
         git switch branch_name
+        git checkout branch_name
 
-    When switching to a branch, if the branch does not exist, git will create it.
-    Unstaged changes will be lost when using checkout.
-    Unstaged changes will come with the new branch, when using switch if there is no conflict.
+        When switching to a branch, if the branch does not exist, git will create it.
+        Unstaged changes will be lost when using checkout.
+        Unstaged changes will come with the new branch, when using switch if there is no conflict.
+        
+    Switch to remote branch: 
+        git switch [branch name]
+        git checkout --track origin/[branch name]
 
     Create branch and switch to it:
-        git checkout -b branch_name
         git switch -c branch_name
+        git checkout -b branch_name
 
     Rename branch(have to be in that branch): git branch -m new_branch_name
 
@@ -289,7 +295,7 @@ Stashing:
             git stash drop stash@{1}
 
 
-Check/Undoing changes:
+Check changes:
 
     Checkout a commit:
         git checkout [commit]
@@ -314,7 +320,9 @@ Check/Undoing changes:
         git checkout HEAD~3
 
 
+    Checkout origin/main: git checkout origin/main
 
+Undo Changes: 
 
     Undo unstaged local changes:
         Confirm that the file is unstaged: 
@@ -443,3 +451,66 @@ Connect local repo to remote repo:
 
         git push origin master --delete: 
             (-d: delete remote branch)
+
+<remote>/<branch>: origin/main refers to the state of main branch on the remote repo named origin.
+upstream/<branch>: upstream/main refers to the state of main branch on the upstream repo named upstream.
+(upstream is a common remote name)
+
+
+Fetching: 
+    View existing remotes for your repository: git remote -v
+
+    Fetch the latest changes from the remote repo: git fetch [remote]
+    (This will fetch the latest changes from the remote repo, and merge them with your local repo)
+
+    Fetch the latest changes from the remote repo on a branch: git fetch [remote] <branch>
+
+
+    git fetch [remote] <branch> --tags: 
+        (-t: fetch tags)
+
+    git fetch --all: 
+        (-a: fetch all remotes)
+        
+    git fetch --tags: 
+        (-t: fetch tags)
+
+    git fetch --prune: 
+        (-p: prune remote branches)
+
+    git fetch --prune --all --tags --prune-tags --prune-unreachable: 
+        (-u: prune unreachable branches)
+    
+    git fetch --prune --all --tags --prune-tags --prune-unreachable --prune-refs --prune-shallow --prune-refs-with-glob=refs/remotes/*/* --prune-shallow-exclude=refs/remotes/origin/
+
+
+Pulling: 
+    git pull [remote] [branch]
+    (This will pull the latest changes from the remote repo, and merge them with your local repo)
+    (Pulls can result into merge conflicts)
+
+    git pull origin/main: 
+        (This will pull the latest changes from the remote repo, and merge them with your local repo)
+        (Pulls can result into merge conflicts)
+
+    git pull:
+        If we run git pull without any arguments, it assumes that remote will default to origin and branch will default to whatever tracking connection is configured for your current branch.
+        Note: This behavior can be configured, and tracking connections can be changed manually. Most people do not mess with that stuff.
+
+    git pull [remote] [branch] --tags: 
+        (-t: pull tags)
+
+    git pull --all: 
+        (-a: pull all remotes)
+        
+    git pull --tags: 
+        (-t: pull tags)
+
+    git pull --prune: 
+        (-p: prune remote branches)
+
+    git pull --prune --all --tags --prune-tags --prune-unreachable: 
+        (-u: prune unreachable branches)
+    
+    git pull --prune --all --tags --prune-tags --prune-unreachable --prune-refs --prune-shallow --prune-refs-with-glob=refs/remotes/*/* --prune-shallow-exclude=refs/remotes/origin/
+
