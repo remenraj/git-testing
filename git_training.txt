@@ -514,3 +514,67 @@ Pulling:
     
     git pull --prune --all --tags --prune-tags --prune-unreachable --prune-refs --prune-shallow --prune-refs-with-glob=refs/remotes/*/* --prune-shallow-exclude=refs/remotes/origin/
 
+
+
+Rebase: 
+    Why rebase?: We get a much cleaner Project history. No unnecessary merge conflicts(like Resolve merge conflicts on feature branches). We end up with a linear project history.
+We can also rewrite, delete, rename or even reorder commits (before sharing them) with interactive rebase.
+
+Warning: Never rebase commits that have been shared with others. If you have already pushed commits up to Github, do not rebase them unless you're positive no one on the team is using these commits.
+
+We can also wait until we are done with a feature and then rebase the feature branch on the master branch.
+
+    Merging using rebase:
+        (First switch to the branch you want to merge with: 
+            git switch [branch name]
+            git switch feature)
+
+        git rebase [branch name]
+        git rebase main
+        (This will merge the branch with the current branch)
+        (Merging can result in conflicts)
+        When there's conflicts, resolve them, add and then "run git rebase --continue" to continue the rebase.
+        To abort rebase when there's conflicts, run "git rebase --abort".
+
+    Editing comments with interactive rebase:
+        Running git rebase -i HEAD~4
+        (HEAD~4 is the how far back you want to go)
+        This will open up the interactive rebase editor. Here we'll see a list of commits alongside a list of commands that we can choose from. Here are a couple of the more commonly used commands:
+            - pick: use the commit
+            - reword: use the commit, but edit the commit message
+            - edit: use the commit, but stop for amending
+            - fixup: use commit contents but meld it into previous commit and discard the commit message
+            - drop: remove commit
+
+    git rebase [remote] [branch]
+    (This will rebase your current branch on top of the specified branch)
+
+    git rebase [remote] [branch] --onto [new branch name]
+    (This will rebase your current branch on top of the specified branch, and create a new branch named [new branch name])
+
+    git rebase --continue: 
+        (This will continue the rebase)
+
+    git rebase --skip: 
+        (This will skip the current commit)
+
+    git rebase --abort: 
+        (This will abort the rebase)
+
+    git rebase --edit-todo: 
+        (This will edit the todo file)
+
+    git rebase --show-current-patch: 
+        (This will show the current patch)
+
+    git rebase --show-current-patch --stat: 
+        (This will show the current patch and the diffstat)
+
+    git rebase --show-current-patch --stat --summary: 
+        (This will show the current patch, the diffstat, and the summary)
+
+    git rebase --show-current-patch --stat --summary --graph: 
+        (This will show the current patch, the diffstat, the summary, and the graph)
+
+    git rebase --show-current-patch --stat --summary --graph --color --no-color --no-graph --no-stat: 
+        (This will show the current patch, the diffstat, the summary, the graph, the color, the no-color, the no-graph, and the no-stat)
